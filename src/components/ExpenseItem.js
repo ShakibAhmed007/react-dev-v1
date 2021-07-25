@@ -2,12 +2,11 @@ import './ExpenseItem.css';
 
 function ExpenseItem() {
     return (
-        <div>
-            <div> Date {new Date().toDateString()}</div>
-            <div>
-                {' '}
+        <div className="expense-item">
+            <div>{new Date().toDateString()}</div>
+            <div className="expense-item__description">
                 <h2>Car Insurance</h2>
-                <div>10000 TK</div>
+                <div className="expense-item__price">10000 TK</div>
             </div>
         </div>
     );
