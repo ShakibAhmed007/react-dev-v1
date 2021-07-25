@@ -1,12 +1,13 @@
+/* eslint-disable react/destructuring-assignment */
 import './ExpenseItem.css';
 
-function ExpenseItem() {
+function ExpenseItem(props) {
     return (
         <div className="expense-item">
-            <div>{new Date().toDateString()}</div>
+            <div>{props.date}</div>
             <div className="expense-item__description">
-                <h2>Car Insurance</h2>
-                <div className="expense-item__price">10000 TK</div>
+                <h2>{props.title}</h2>
+                <div className="expense-item__price">{props.price}</div>
             </div>
         </div>
     );
