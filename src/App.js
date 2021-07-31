@@ -1,28 +1,14 @@
+import React, { useState } from 'react';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 
-function App() {
-    const expenses = [
-        {
-            title: 'Car 1',
-            price: '1000 TK',
-            date: '2021-07-30',
-        },
-        {
-            title: 'Car 2',
-            price: '2000 TK',
-            date: '2021-07-30',
-        },
-        {
-            title: 'Car 3',
-            price: '3000 TK',
-            date: '2021-07-30',
-        },
-    ];
+const DUMMY_EXPENSES = [];
 
+function App() {
+    const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
     const saveExpenseData = (expenseFormData) => {
-        expenses.push(expenseFormData);
-        console.log('from child to parent --->>>', expenses);
+        console.log(expenseFormData);
+        setExpenses((prevExpenses) => [expenseFormData, ...prevExpenses]);
     };
     const element = (
         <div>
