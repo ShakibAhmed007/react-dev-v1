@@ -1,9 +1,9 @@
 /* eslint-disable react/destructuring-assignment */
-function ExpenseDate() {
+function ExpenseDate(props) {
     return (
         <div>
             <div>Date</div>
-            <div> 17 Feb, 1992 </div>
+            <div> {props.date} </div>
         </div>
     );
 }

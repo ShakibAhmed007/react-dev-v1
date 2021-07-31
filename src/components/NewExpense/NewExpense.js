@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 
-const NewExpense = () => {
+const NewExpense = (props) => {
     // Approach 1
     const [enteredTitle, setTitle] = useState('');
     const [enteredAmount, setAmount] = useState('');
@@ -24,9 +24,7 @@ const NewExpense = () => {
             amount: enteredAmount,
             date: enteredDate,
         };
-
-        console.log(expenseFormData);
-
+        props.onSubmitExpenseForm(expenseFormData);
         // clear value after submission
         setTitle('');
         setAmount('');
